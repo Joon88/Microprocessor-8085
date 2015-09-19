@@ -1,0 +1,37 @@
+LXI H, 0000H
+
+MVI A, 00H
+
+MVI C, 05H
+
+MOV D, C
+
+MVI B, 00H
+
+LABEL: ADD M
+
+INX H
+
+DCR C
+
+JNZ LABEL
+
+LOOP: INR B
+
+SUB D
+
+JNC LOOP
+
+ADD D
+
+STA 0006H
+
+/*this stores the remainder in the memory*/
+DCR B
+
+MOV A, B
+
+STA 0008H
+
+/*this stores the quotient in the memory*/
+HLT

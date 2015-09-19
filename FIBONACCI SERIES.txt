@@ -1,0 +1,38 @@
+MVI C, 08H
+
+LXI H, 0000H
+
+MVI A, 00H
+
+MOV M, A
+
+DCR C
+
+INX H
+
+INR A
+
+MOV M, A
+
+DCR C
+
+LOOP: MVI A, 00H
+
+ADD M
+
+DCX H
+
+ADD M
+
+INX H
+
+INX H
+
+MOV M, A
+
+DCR C
+
+JNZ LOOP
+
+HLT
+
