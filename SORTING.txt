@@ -1,0 +1,43 @@
+START: LXI H, 0000H
+
+MOV C, M
+
+DCR C
+
+MVI D, 00H
+
+MVI B, 00H
+
+INX H
+
+LOOP: MOV A, M
+
+INX H
+
+CMP M
+
+JC LABEL
+
+MOV B, M
+
+MOV M, A
+
+DCX H
+
+MOV M, B
+
+INR D 
+
+INX H
+
+LABEL: DCR C
+
+JNZ LOOP
+
+MVI A, 00H
+
+SUB D
+
+JC START
+
+HLT
