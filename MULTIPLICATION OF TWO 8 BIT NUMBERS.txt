@@ -1,0 +1,33 @@
+MVI D, 00H
+
+LXI H, 2000H
+
+MOV B, M
+
+INX H
+
+MOV C, M
+
+DCR C
+
+MVI A, 00H
+
+LOOP: ADD B
+
+JNC NEXT
+
+INR D
+
+NEXT: DCR C
+
+JNZ LOOP
+
+INX H
+
+MOV M, A
+
+INX H
+
+MOV M, D //here D stores the carry
+
+HLT
